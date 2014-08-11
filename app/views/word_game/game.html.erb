@@ -1,0 +1,19 @@
+
+
+******** Welcome to the longest word-game !********
+
+<p>Here is your grid :</p>
+<p><%= @grid %></p>
+
+<p>*****************************************************</p>
+
+
+<!-- en ruby c'est : attempt = gets.chomp -->
+
+<form action="/score">
+  <label for="question">What's your best shot ?</label>
+  <input type="hidden" name="start_time" value="<%= Time.now.to_f * 1000 %>">
+  <input type="hidden" name="grid" value="<%= @grid %>">
+  <input type="text" id="question" name="attempt" placeholder="your word is...">
+  <input type="submit" value="validate">
+</form>
